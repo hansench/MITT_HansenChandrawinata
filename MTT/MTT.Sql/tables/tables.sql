@@ -1,0 +1,40 @@
+﻿
+CREATE TABLE dbo.[User]
+(
+	username NVARCHAR(50) NOT NULL PRIMARY KEY,
+	[password] NVARCHAR(50) NOT NULL
+)
+
+CREATE TABLE dbo.Skill
+(
+	skillID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+	skillName NVARCHAR(500) NOT NULL DEFAULT('')
+)
+
+CREATE TABLE dbo.SkillLevel
+(
+	skillLevelID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+	skillLevelName VARCHAR(500) NOT NULL DEFAULT('')
+)
+
+
+
+CREATE TABLE dbo.UserProfile
+(
+	username NVARCHAR(50) NOT NULL,
+	[name] VARCHAR(50) NOT NULL,
+	[address] NVARCHAR(500) NOT NULL,
+	bod DATE NULL,
+	email NVARCHAR(50) NOT NULL
+)
+
+
+CREATE TABLE dbo.UserSkills
+(
+	userSkillId NVARCHAR(50) NOT NULL PRIMARY KEY,
+	username NVARCHAR(50) NOT NULL,
+	skillID INT NOT NULL,
+	skillLevelID INT NOT NULL
+)
+
+
